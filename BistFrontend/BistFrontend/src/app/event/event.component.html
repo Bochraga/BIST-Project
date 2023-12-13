@@ -1,0 +1,39 @@
+
+<div class="event-form" >
+    <h2 class="form-title">Create Event</h2>
+    <form class="form" (submit)="submitEvent()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" id="title" name="title" [(ngModel)]="eventData.title" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="eventData.description" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input class="form-control" type="date" id="date" name="date" [(ngModel)]="eventData.date" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="hour">Hour</label>
+        <input class="form-control" type="text" id="hour" name="hour" [(ngModel)]="eventData.hour" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="place">Place</label>
+        <input class="form-control" type="text" id="place" name="place" [(ngModel)]="eventData.place" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="nbParticipant">Number of Participants</label>
+        <input class="form-control" type="text" id="nbParticipant" name="nbParticipant" [(ngModel)]="eventData.nbParticipant" required>
+      </div>
+  
+      <button class="btn-submit" type="submit">Create</button>
+    </form>
+  </div>
+
+  

@@ -1,0 +1,75 @@
+<div class="container">
+    <h2>Admissions List</h2>
+    <div class="container">
+      <label for="searchInput">SearchAdmission:</label>
+      <input type="text" id="searchInput" [(ngModel)]="term">
+      <button (click)="searchAdmission()">Search</button>
+    </div>
+    
+    <div class="container">
+      <label for="filterInput">FilterAdmission:</label>
+      <input type="text" id="filterInput" [(ngModel)]="status">
+      <button (click)="filterAdmission()">Filter</button>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Mother Full Name</th>
+        <th>Mother Occupation</th>
+        <th>Mother Email</th>
+        <th>Mother Nationality</th>
+        <th>Mother Phone</th>
+        <th>Father Full Name</th>
+        <th>Father Occupation</th>
+        <th>Father Email</th>
+        <th>Father Nationality</th>
+        <th>Father Phone</th>
+        <th>Home Address</th>
+        <th>Children Number</th>
+        <th>Children Full Name</th>
+        <th>Children Birth Date</th>
+        <th>Family Situation</th>
+        <th>Children Gender</th>
+        <th>Status</th>
+        <th>Block Date </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admission of admissions">
+        <td>{{ admission.motherFullName }}</td>
+        <td>{{ admission.motherOccupation }}</td>
+        <td>{{ admission.motherEmail }}</td>
+        <td>{{ admission.motherNationality }}</td>
+        <td>{{ admission.motherPhone}}</td>
+        <td>{{ admission.fatherFullName }}</td>
+        <td>{{ admission.fatherOccupation }}</td>
+        <td>{{ admission.fatherEmail }}</td>
+        <td>{{ admission.fatherNationality }}</td>
+        <td>{{ admission.fatherPhone }}</td>
+        <td>{{ admission.homeAddress }}</td>
+        <td>{{ admission.childrenNumber }}</td>
+        <td>{{ admission.childFullName }}</td>
+        <td>{{ admission.childBirthdate }}</td>
+        <td>{{ admission.familySituation }}</td>
+        <td>{{ admission.childGender }}</td>
+        <td>
+          <select [(ngModel)]="admission.status" (ngModelChange)="onEdit(admission)">
+            <option value="sent">Sent</option>
+            <option value="in progress">In Progress</option>
+            <option value="treated">Treated</option>
+          </select>
+        
+        </td>
+        <td>
+          <select [(ngModel)]="admission.blockDate" (ngModelChange)="onBlock(admission)">
+            <option value="Not Blocked">Not Blocked</option>
+            <option value="Blocked"> Blocked</option>
+          </select>
+        
+        </td>
+        
+      </tr>
+    </tbody>
+  </table></div>
+  
+  

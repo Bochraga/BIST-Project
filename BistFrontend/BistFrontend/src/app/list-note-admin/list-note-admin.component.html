@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>List Of Grades </h2>
+  <form (submit)="searchGrades()">
+    <label for="classLevel">Class Level</label>
+    <input type="text" id="classLevel" [(ngModel)]="classLevel" name="classLevel" placeholder="Class Level">
+
+    <label for="semester">Semester: </label>
+    <input type="text" id="semester" [(ngModel)]="semester" name="semester" placeholder="Semester">
+
+    <button type="submit">Search</button>
+  </form>
+
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Subject</th>
+        <th>Grade</th>
+        <th>Semester</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let note of noteList; let i = index">
+        <td>{{ note.student_name }}</td>
+        <td>{{ note.subject }}</td>
+        <td>{{ note.grade }}</td>
+        <td>{{ note.semester }}</td>
+        <td>
+          <button (click)="deleteGrade(note.id)">Delete</button>
+          <button (click)="prefillModifyForm(note)">Modify</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Affichez le formulaire de modification lorsque modifyForm est actif -->
+  <form *ngIf="modifyForm" [formGroup]="modifyForm" (submit)="submitModifyForm()">
+    <div>
+      <label for="student_name">Student Name: </label>
+      <input type="text" id="student_name" formControlName="student_name">
+    </div>
+    <div>
+      <label for="subject">Subject: </label>
+      <input type="text" id="subject" formControlName="subject">
+    </div>
+    <div>
+      <label for="grade">Grade: </label>
+      <input type="text" id="grade" formControlName="grade">
+    </div>
+    <div>
+      <label for="semester">Semester: </label>
+      <input type="text" id="semester" formControlName="semester">
+    </div>
+    <button type="submit">Save</button>
+  </form>
+</div>

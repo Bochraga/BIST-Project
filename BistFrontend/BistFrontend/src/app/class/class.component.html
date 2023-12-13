@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Class</h2>
+  <div class="container">
+    <label for="searchInput">Search Class:</label>
+    <input type="text" id="searchInput" [(ngModel)]="term">
+    <button (click)="searchClasses()">Search</button>
+  </div>
+  <form [formGroup]="modifyForm" (submit)="getFilteredClasses(modifyForm.value.level, modifyForm.value.studentNbr)">
+    <div>
+      <label for="level">Level: </label>
+      <input type="text" id="level" formControlName="level">
+    </div>
+    <div>
+      <label for="studentNbr">StudentNbr: </label>
+      <input type="text" id="studentNbr" formControlName="studentNbr">
+    </div>
+
+    <button type="submit">Filter</button>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Class Level</th>
+        <th>Student Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let class of classes; let i = index">
+        <td>{{ class.level }}</td>
+        <td>{{ class.studentNbr }}</td>
+        <td>
+          <select [(ngModel)]="statusData.status" (ngModelChange)="changeStatus(class.id)">
+            <option value="enabled">Enabled</option>
+            <option value="disabled">Disabled</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="deleteClass(class.id)">Delete</button>
+          <button (click)="selectClasses(class)">Modify</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form *ngIf="searchClasses" [formGroup]="modifyForm" (submit)="submitModifyForm()">
+    <div>
+      <label for="level">Level: </label>
+      <input type="text" id="level" formControlName="level">
+    </div>
+    <div>
+      <label for="studentNbr">StudentNbr: </label>
+      <input type="text" id="studentNbr" formControlName="studentNbr">
+    </div>
+    <button type="submit">Save</button>
+  </form>
+</div>

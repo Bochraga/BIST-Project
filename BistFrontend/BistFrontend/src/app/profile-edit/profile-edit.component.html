@@ -1,0 +1,48 @@
+
+<h3 class="update-profile-title">Update your profile</h3>
+
+<div class="form-container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" />
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" />
+    </div>
+
+    <div class="form-group">
+      <label for="birthdate">Birthdate</label>
+      <input type="date" id="birthdate" formControlName="birthdate" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" formControlName="phone" />
+    </div>
+
+    <div class="form-group">
+      <label for="occupation">Occupation</label>
+      <input type="text" id="occupation" formControlName="occupation" />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" formControlName="address" />
+    </div>
+
+    <div class="form-group">
+      <label for="nationality">Nationality</label>
+      <input type="text" id="nationality" formControlName="nationality" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" />
+    </div>
+
+    <button type="submit">Update Profile</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<h1>Liste des participations</h1>
+
+<div class="container">
+  <label for="searchInput">SearchEvent:</label>
+  <input type="text" id="searchInput" [(ngModel)]="term">
+  <button (click)="searchEvents()">Search</button>
+</div>
+
+<div class="container">
+  <label for="filterInput">FilterEvent:</label>
+  <input type="text" id="filterInput" [(ngModel)]="filterValue">
+  <button (click)="filterEvents()">Filter</button>
+</div>
+<div class="event-container" *ngFor="let event of events">
+  <h3>{{ event.title }}</h3>
+  <p>{{ event.description }}</p>
+  <p>Date: {{ event.date }}</p>
+  <p>Hour: {{ event.hour }}</p>
+  <p>Place: {{ event.place }}</p>
+  <button *ngIf="event.id !== undefined" (click)="cancelParticipation(event.id)">Cancel</button>
+</div>

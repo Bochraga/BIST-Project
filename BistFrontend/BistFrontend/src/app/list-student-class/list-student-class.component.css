@@ -1,0 +1,56 @@
+/* Style for the container */
+.container {
+    margin: 20px;
+  }
+  
+  /* Style for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the header of the table */
+  table th {
+    background-color: hsl(211, 100%, 50%);
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Style for the rows of the table */
+  table tr td {
+    padding: 10px;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  
+  /* Style for the container of the table */
+  .table-container {
+    margin-top: 20px;
+  }
+  /* Stylisation de la liste déroulante */
+#classLevel {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Stylisation des options de la liste déroulante */
+#classLevel option {
+  font-size: 14px;
+}
+
+/* Stylisation des options au survol */
+#classLevel option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Stylisation des options sélectionnées */
+#classLevel option:checked {
+  background-color: #e0e0e0;
+}
+
+  

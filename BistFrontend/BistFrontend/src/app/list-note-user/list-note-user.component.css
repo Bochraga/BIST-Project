@@ -1,0 +1,28 @@
+/* Ajoutez ce style dans un fichier CSS séparé et importez-le dans votre composant Angular. */
+
+/* Style pour le conteneur */
+.container {
+    margin: 20px;
+  }
+ 
+/* Style pour la table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style pour le header de la table */
+  table th {
+    background-color: hsl(211, 100%, 50%);
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Style pour les lignes de la table */
+  table tr td {
+    padding: 10px;
+    border-bottom: 1px solid #dcdcdc;
+  }

@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Student List</h2>
+  <div class="header-container">
+    <div>
+      <input type="text" [(ngModel)]="term" placeholder="Search by Full Name">
+      <button (click)="searchStudents()">Search</button>
+    </div>
+    <div>
+      <input type="number" [(ngModel)]="filterValuee" placeholder="Filter by Enrollment Year">
+      <button (click)="filterStudents(filterValuee)">Filter</button>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Gender</th>
+        <th>Birthdate</th>
+        <th>Enrollment Year</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.FullName }}</td>
+        <td>{{ student.Gender }}</td>
+        <td>{{ student.Birthdate }}</td>
+        <td>{{ student.EnrollmentYear }}</td>
+        <td>
+          <button (click)="deleteStudent(student.id)">Delete</button>
+          <button (click)="selectStudent(student)">Edit</button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form *ngIf="selectedStudent" [formGroup]="modifyForm" (submit)="editStudent()">
+    <label for="fullName">Full Name:</label><br />
+    <input id="fullName" formControlName="fullName"><br />
+    <label for="gender">Gender:</label><br />
+    <input id="gender" formControlName="gender"><br />
+    <label for="birthdate">Birthdate:</label><br />
+    <input id="birthdate" formControlName="birthdate"><br />
+    <label for="enrollmentyear">Enrollment Year:</label><br />
+    <input id="enrollmentyear" formControlName="enrollmentYear"><br /><br/>
+    <button type="submit">Save Changes</button>
+  </form>
+    </div>

@@ -1,0 +1,68 @@
+<h2>List of Subjects</h2>
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Category or Level" />
+  <button class="btn btn-primary" (click)="searchSubjects()">Search</button>
+</div>
+<div class="filter-container">
+  <select [(ngModel)]="selectedCoefficient">
+    <option value="1">Coefficient 1</option>
+    <option value="2">Coefficient 2</option>
+    <option value="3">Coefficient 3</option>
+    <option value="4">Coefficient 4</option>
+    <option value="5">Coefficient 5</option>
+  </select>
+  <button class="btn btn-primary" (click)="filterSubjects(selectedCoefficient)">Filter</button>
+</div>
+<div class="table-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Coefficient</th>
+        <th>Level</th>
+        <th>Category</th>
+        <th>Actions</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let subject of filteredSubjects; let i = index">
+        <tr *ngIf="matchesSearchTerm(subject)">
+          <td>{{ subject.name }}</td>
+          <td>{{ subject.coefficient }}</td>
+          <td>{{ subject.level }}</td>
+          <td>{{ subject.category }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteSubject(subject.id)">Delete</button>
+            <button class="btn btn-danger" (click)="selectSubject(subject)">Modify</button>
+          </td>
+          <td>
+            <select [(ngModel)]="selectedStatus[subject.id]" (ngModelChange)="changeStatus(subject.id, selectedStatus[subject.id])">
+              <option value="1">Enabled</option>
+              <option value="0">Disabled</option>
+            </select>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <form *ngIf="selectedSubject" [formGroup]="modifyForm" (submit)="modifySubject()">
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    <div>
+      <label for="coefficient">Coefficient: </label>
+      <input type="text" id="coefficient" formControlName="coefficient">
+    </div>
+    <div>
+      <label for="level">Level: </label>
+      <input type="text" id="level" formControlName="level">
+    </div>
+    <div>
+      <label for="category">Category: </label>
+      <input type="text" id="category" formControlName="category">
+    </div>
+    <button type="submit">Save</button>
+  </form>
+</div>

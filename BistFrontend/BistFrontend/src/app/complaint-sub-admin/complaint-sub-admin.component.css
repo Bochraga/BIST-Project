@@ -1,0 +1,40 @@
+.complaints-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px; /* Adjust the spacing between cells */
+  }
+  
+  .complaints-table th,
+  .complaints-table td {
+    padding: 15px;
+    text-align: left;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+  }
+  
+  .complaints-status {
+    cursor: pointer;
+  }
+  
+  .complaints-status:hover {
+    background-color: #eaf0fd;
+    transition: background-color 0.3s;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .center-heading {
+    text-align: center;
+  }
+
+  .status-text {
+    cursor: pointer;
+  }
+  .status-column {
+    width: 150px; 
+  }

@@ -1,0 +1,28 @@
+<h2 class="center-heading">Complaint List</h2>
+
+
+<div class="header-container">
+  <app-complaint-filter (filterApplied)="filterComplaints($event)"></app-complaint-filter>
+
+  <div class="event-list-container">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search complaints">
+    <button (click)="searchComplaints()">Search</button>
+  </div>
+</div>
+
+<table class="event-list-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let complaint of complaints" class="event-row">
+      <td>{{ complaint.title }}</td>
+      <td>{{ complaint.content }}</td>
+      <td>{{ complaint.status }}</td>
+    </tr>
+  </tbody>
+</table>

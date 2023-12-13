@@ -1,0 +1,39 @@
+<div>
+  <label for="subject">Subject:</label>
+  <select [(ngModel)]="selectedSubject" (change)="searchAbsences()">
+    <option *ngFor="let subjectItem of subjects$ | async" [ngValue]="subjectItem">{{ subjectItem.name }}</option>
+  </select>
+
+  
+    <label for="semester">Semester:</label>
+    <select [(ngModel)]="semester" (change)="searchAbsences()" placeholder="Select Semester">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <div class="container">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Date</th>
+              <th>Hour</th>
+              <th>Subject</th>
+              <th>Semester</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let absence of classificationAbsences">
+              <td>{{ absence.student }}</td>
+              <td>{{ absence.date }}</td>
+              <td>{{ absence.hour }}</td>
+              <td>{{ absence.subject}}</td>
+              <td>{{ absence.semester }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  

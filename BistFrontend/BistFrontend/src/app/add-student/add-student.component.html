@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Add Student</h2>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" formControlName="fullName">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" formControlName="gender">
+        <option value="boy">Boy</option>
+        <option value="girl">Girl</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" formControlName="birthdate">
+    </div>
+    <!-- <div class="form-group">
+      <label for="class">Class:</label>
+      <input type="text" id="class" formControlName="class">
+      </div> -->
+    <div class="form-group">
+      <label for="enrollementYear">Enrolment Year:</label>
+      <input type="number" id="enrollementYear" formControlName="enrollementYear">
+    </div>
+
+    <div class="form-group">
+      <label for="parent">Parent's Name:</label>
+      <select id="parent" formControlName="parent" class="form-control">
+        <option value="" disabled selected>Select a parent</option>
+        <option *ngFor="let user of userList" [value]="user.id">{{ user.firstName }}</option>
+      </select>
+    </div>
+    <button type="submit">Add Student</button>
+  </form>
+</div>

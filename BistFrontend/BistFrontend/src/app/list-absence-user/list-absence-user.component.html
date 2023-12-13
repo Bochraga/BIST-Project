@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Date</th>
+            <th>Hour</th>
+            <th>Matière</th>
+            <th>Semester</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let absence of absences">
+            <td>{{ absence.student}}</td>
+            <td>{{ absence.date }}</td>
+            <td>{{ absence.hour }}</td>
+            <td>{{ absence.matiere }}</td>
+            <td>{{ absence.semester }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

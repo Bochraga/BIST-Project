@@ -1,0 +1,99 @@
+<h2>List of Teachers</h2>
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="FirstName or Email" />
+  <button class="btn btn-primary" (click)="searchTeachers()">Search</button>
+</div>
+<form (ngSubmit)="filterTeachers()">
+  <label for="classLevel">Class Level:</label>
+  <input type="text" id="classLevel" [(ngModel)]="classLevel" name="Level" required>
+
+  <label for="subjectName">Subject Name:</label>
+  <input type="text" id="subjectName" [(ngModel)]="subjectName" name="Name" required>
+
+  <button type="submit">Filter</button>
+</form>
+
+<div class="table-container">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Password</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Birthdate</th>
+          <th>Phone</th>
+          <th>Occupation</th>
+          <th>Address</th>
+          <th>Username</th>
+          <th>Nationality </th>
+          <th>Actions</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let teacher of teacherList; let i = index">
+          <tr>
+            <td>{{ teacher.email}}</td>
+            <td>{{ teacher.password }}</td>
+            <td>{{ teacher.firstName }}</td>
+            <td>{{ teacher.lastName }}</td>
+            <td>{{ teacher.birthdate }}</td>
+            <td>{{ teacher.phone }}</td>
+            <td>{{ teacher.occupation}}</td>
+            <td>{{ teacher.address}}</td>
+            <td>{{ teacher.username}}</td>
+            <td>{{ teacher.nationality }}</td>
+            <td>
+              <button class="btn btn-danger" (click)=" deleteTeacher(teacher.id)">Delete</button>
+              <button class="btn btn-danger" (click)="prefillModifyForm(teacher)">Modify</button>
+            </td>
+            <button (click)="changeTeacherStatus(teacher.id)">Change Status</button>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <form *ngIf="selectedTeacher" [formGroup]="modifyForm" (submit)="submitModifyForm()">
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" formControlName="email">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+      </div>
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName">      
+      </div>
+      <div>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" formControlName="birthdate">
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" formControlName="phone">
+      </div>
+      <div>
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" formControlName="occupation">
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <textarea id="address" formControlName="address"></textarea>
+      </div>
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username">
+      </div>
+      <div>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" formControlName="nationality">
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>

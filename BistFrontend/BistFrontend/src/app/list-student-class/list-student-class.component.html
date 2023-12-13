@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Student List</h2>
+  
+    <div class="container">
+      <label for="searchInput">Search Student:</label>
+      <input type="text" id="searchInput" [(ngModel)]="term">
+      <button (click)="searchStudents()">Search</button>
+    </div>
+  
+    <div class="container">
+      <label for="filterInput">Filter Student:</label>
+      <input type="text" id="filterInput" [(ngModel)]="filterValue">
+      <button (click)="filterStudents()">Filter</button>
+    </div>
+  
+    <div>
+      <label for="classLevel">Select Class Level:</label>
+      <select id="classLevel" [(ngModel)]="level" (change)="getStudentsBySelectedLevel()">
+        <option value="">Select a Level</option>
+        <option *ngFor="let classLevel of classLevels" [value]="classLevel.level">{{ classLevel.level }}</option>
+      </select>
+    </div>
+  
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Birthdate</th>
+            <th>Enrollment Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <td>{{ student.FullName }}</td>
+            <td>{{ student.Gender }}</td>
+            <td>{{ student.Birthdate }}</td>
+            <td>{{ student.enrollementYear }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  

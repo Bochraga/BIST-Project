@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Add Student to Class</h2>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="student_id">Student:</label>
+      <select id="student_id" formControlName="student_id" class="form-control">
+        <option *ngFor="let student of students" [value]="student.id">{{ student.FullName }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="class_id">Class:</label>
+      <select id="class_id" formControlName="class_id" class="form-control">
+        <option *ngFor="let classItem of class" [value]="classItem.id">{{ classItem.level }}</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="studentForm.invalid">Add Student to Class</button>
+  </form>
+</div>

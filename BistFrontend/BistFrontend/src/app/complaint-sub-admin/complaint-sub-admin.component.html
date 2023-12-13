@@ -1,0 +1,30 @@
+<div *ngIf="complaints.length > 0">
+    <h1 class="center-heading">Complaint List</h1>
+  
+    <table class="complaints-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th class="status-column">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let complaint of complaints">
+          <td>{{ complaint.title }}</td>
+          <td>{{ complaint.content }}</td>
+          <td>
+            <ng-container *ngIf="!complaint.editMode; else editModeTemplate">
+              <span class="status-text" (click)="enableEditMode(complaint)">{{ complaint.status }}</span>
+            </ng-container>
+            <ng-template #editModeTemplate>
+              <select [(ngModel)]="complaint.status" (blur)="disableEditMode(complaint)">
+                <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+              </select>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

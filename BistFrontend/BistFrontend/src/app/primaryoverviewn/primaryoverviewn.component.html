@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="primary">
+      <div class="frame">
+        <div class="rs-module-wrap">
+          <div class="div-breadcrumbs">
+            <div class="div-container">
+              <div class="div-row"><div class="div-col-md"></div></div>
+            </div>
+            <div class="log-in">
+              <div class="div">
+                <img class="img" src="img/user-interface-user.png" />
+                <div class="text-wrapper">Log in</div>
+              </div>
+            </div>
+            <!-- <div class="frame-2">
+              <p class="THE-BIST-WAY-WORK">THE BIST WAY<br />WORK HARD, DREAM BIG.</p>
+              <div class="text-wrapper-2">PRIMARY</div>
+            </div> -->
+            <div class="pseudo"></div>
+          </div>
+        </div>
+        <!-- <div class="navigation-bar">
+          <div class="BIST-logo-white"></div>
+          <div class="list">
+            <div class="item-link"><div class="text-wrapper-3">Admissions</div></div>
+            <div class="item-link-2">
+              <div class="text-wrapper-4">Primary</div>
+              <img class="SVG" src="img/svg-1.png" />
+            </div>
+            <div class="item-link-2">
+              <div class="text-wrapper-5">Secondary</div>
+              <img class="SVG" src="img/svg-1.png" />
+            </div>
+            <div class="item-link-2">
+              <div class="text-wrapper-5">About us</div>
+              <img class="SVG" src="img/svg-1.png" />
+            </div>
+            <div class="item-link-2">
+              <div class="text-wrapper-5">Education</div>
+              <img class="SVG" src="img/svg.png" />
+            </div>
+          </div>
+        </div> -->
+        <div class="navigation-bar">
+          <div class="BIST-logo-white"></div>
+          <div class="list">
+            <div class="item-link"><div class="text-wrapper">Admissions</div></div>
+            <div class="div">
+              <div class="text-wrapper-2" (click)="toggleDropdown()">Primary</div>
+              <img class="SVG" src="img/svg.png" />
+              
+              <div class="drop-down-primary" *ngIf="isDropdownVisible">
+                  <div class="link">
+                      <div class="text-wrapper">General overview</div>
+                  </div>
+                  <img class="SVG" src="img/svg.png" />
+              
+                  <div class="link">
+                      <div class="text-wrapper">Early years and foundations</div>
+                  </div>
+                  <img class="SVG" src="img/svg.png" />
+              
+                  <div class="link">
+                      <p class="text-wrapper">Key stages 1 &amp; 2</p>
+                  </div>
+              </div>
+              
+              <!-- </div> -->
+            </div>
+            <div class="div">
+              <div class="text-wrapper-2">Secondary</div>
+              <img class="SVG" src="img/svg.png" />
+            </div>
+            <div class="div">
+              <div class="text-wrapper-2">About us</div>
+              <img class="SVG" src="img/svg.png" />
+            </div>
+            <div class="div">
+              <div class="text-wrapper-2">Education</div>
+              <img class="SVG" src="img/svg-1.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-wrapper">
+        <div class="section">
+          <div class="link"><img class="img" src="img/user-interface-play.png" /></div>
+          <!-- <div class="heading-discover">The BIST Future</div> -->
+        </div>
+      </div>
+      <div class="frame-3">
+        <p class="p">Welcome to BIST Primary school</p>
+        <div class="div-tab-content">
+          <div class="div-elementor">
+            <div class="jpg"></div>
+            <div class="div-elementor-widget">
+              <div class="p-hd-fce">
+                <div class="strong-stephen">Karyn Walton</div>
+                <div class="strong-stephen-2">| PRIMARY SCHOOL PRINCIPAL</div>
+              </div>
+              <p class="i-am-karyn-and-i-am">
+                I am Karyn, and I am the Primary Principal here at BIST ! I am from Scotland, received a Bachelor’s
+                Degree in Education from the University of Dundee and my Diploma in Special Education from the
+                University of Leeds. I am certified to teach Early Childhood, SEN, EAL and Primary Education.<br /><br /><br />This
+                is my first year at BIST after four years in China. I have a true passion for working with our
+                community; colleagues, parents and children!! Helping each child progress in all areas of their
+                development—academic, social, emotions and supporting them to find and follow their passions—is a
+                challenge that I am honoured to be a part of each and every day
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-gb-inside">
+        <p class="heading-who-can">A step by step process</p>
+        <div class="div-gb-grid-wrapper">
+          <div class="div-gb-grid-column">
+            <div class="frame-4">
+              <img class="vector" src="img/vector-19.png" />
+              <div class="ellipse"></div>
+            </div>
+            <div class="text-wrapper-6">Safeguarding</div>
+            <p class="text-wrapper-7">
+              We provide a caring, loving and secure environment, involving all pupils, adults within the school
+              community.
+            </p>
+          </div>
+          <div class="div-gb-grid-column">
+            <div class="frame-4">
+              <img class="vector-2" src="img/vector-18.png" />
+              <div class="ellipse-2"></div>
+            </div>
+            <div class="text-wrapper-6">Pastoral Care</div>
+            <p class="text-wrapper-7">
+              Together in partnership with parents and carers we aim to look after the welfare of all our children.
+              Happy, healthy children learn best.
+            </p>
+          </div>
+          <div class="div-gb-grid-column-2">
+            <div class="frame-4">
+              <img class="vector-3" src="img/vector-17.png" />
+              <div class="ellipse-2"></div>
+            </div>
+            <div class="text-wrapper-6">Pupil council</div>
+            <p class="text-wrapper-7">
+              We aim to create an environment in which all the pupils understand, respect and appreciate each other’s
+              cultural diversity.
+            </p>
+          </div>
+          <div class="div-gb-grid-column">
+            <div class="frame-4">
+              <img class="vector-4" src="img/vector-16.png" />
+              <div class="ellipse-2"></div>
+            </div>
+            <div class="text-wrapper-6">Extra Curricular Activities</div>
+            <p class="text-wrapper-7">
+              While we teach the children the importance of academic achievement, we also encourage them to take a
+              deeper look into their potential.
+            </p>
+          </div>
+          <div class="div-gb-grid-column">
+            <div class="frame-4">
+              <img class="vector-5" src="img/vector-15.png" />
+              <div class="ellipse-2"></div>
+            </div>
+            <div class="text-wrapper-6">Supporting Families</div>
+            <p class="text-wrapper-8">
+              We endeavour to provide good communication with parents, as we believe that parents are also partners in
+              their child’s education and development.
+            </p>
+          </div>
+          <div class="div-gb-grid-column-3">
+            <div class="frame-4">
+              <img class="vector-6" src="img/vector-14.png" />
+              <div class="ellipse-3"></div>
+            </div>
+            <div class="text-wrapper-6">Documents required</div>
+            <div class="link-2"><p class="text-wrapper-9">Download the list of required documents</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="div-gb-inside-2">
+        <p class="p">The British system primary stages</p>
+        <div class="frame-5">
+          <div class="link-3">
+            <div class="frame-6">
+              <div class="text-wrapper-10">Date of birth range</div>
+              <div class="frame-7">
+                <div class="text-wrapper-11">From</div>
+                <div class="text-wrapper-11">To</div>
+              </div>
+            </div>
+            <div class="text-wrapper-12">Year group</div>
+            <div class="text-wrapper-12">Year group</div>
+          </div>
+          <div class="input">
+            <div class="frame-8">
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2017</div>
+                <div class="text-wrapper-13">31/08/2018</div>
+              </div>
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2016</div>
+                <div class="text-wrapper-13">31/08/2017</div>
+              </div>
+            </div>
+            <div class="frame-10">
+              <div class="text-wrapper-14">EYFS 1</div>
+              <div class="text-wrapper-15">EYFS 2</div>
+            </div>
+            <div class="text-wrapper-16">EYFS</div>
+          </div>
+          <div class="input">
+            <div class="frame-8">
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2015</div>
+                <div class="text-wrapper-13">31/08/2016</div>
+              </div>
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2014</div>
+                <div class="text-wrapper-13">31/08/2015</div>
+              </div>
+            </div>
+            <div class="frame-10">
+              <div class="text-wrapper-14">Year 1</div>
+              <div class="text-wrapper-15">Year 2</div>
+            </div>
+            <div class="text-wrapper-16">KS 1</div>
+          </div>
+          <div class="input-2">
+            <div class="frame-11">
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2013</div>
+                <div class="text-wrapper-13">31/08/2014</div>
+              </div>
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2014</div>
+                <div class="text-wrapper-13">31/08/2013</div>
+              </div>
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2011</div>
+                <div class="text-wrapper-13">31/08/2012</div>
+              </div>
+              <div class="frame-9">
+                <div class="text-wrapper-13">01/09/2010</div>
+                <div class="text-wrapper-13">31/08/2011</div>
+              </div>
+            </div>
+            <div class="frame-12">
+              <div class="text-wrapper-14">Year 3</div>
+              <div class="text-wrapper-15">Year 4</div>
+              <div class="text-wrapper-15">Year 5</div>
+              <div class="text-wrapper-15">Year 6</div>
+            </div>
+            <div class="text-wrapper-16">KS 2</div>
+          </div>
+        </div>
+      </div>
+      <div class="div-wrapper">
+        <div class="div-gb-inside-3">
+          <div class="text-wrapper-17">Empowering your child</div>
+          <div class="figure-empowering"></div>
+          <div class="frame-13">
+            <p class="text-wrapper-18">
+              Passion fuels purpose — when your child’s dreams are anchored to a clear vision and driven by his or her
+              interests, he or she will be motivated to work harder to make those dreams come true.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="frame-14">
+        <p class="text-wrapper-17">Years 1 to 6 curriculum overview</p>
+        <div class="frame-15">
+          <img class="user-interface" src="img/user-interface-chevron-left-1.png" />
+          <div class="div-gb-grid-column-4">
+            <div class="frame-4">
+              <img class="vector-7" src="img/vector-13.png" />
+              <div class="ellipse-4"></div>
+            </div>
+            <div class="text-wrapper-19">English</div>
+          </div>
+          <div class="div-gb-grid-column-4">
+            <div class="frame-4">
+              <img class="vector-8" src="img/vector-12.png" />
+              <div class="ellipse-5"></div>
+            </div>
+            <div class="text-wrapper-19">Mathematics</div>
+          </div>
+          <div class="div-gb-grid-column-4">
+            <div class="frame-4">
+              <img class="vector-9" src="img/vector-11.png" />
+              <div class="ellipse-5"></div>
+            </div>
+            <div class="text-wrapper-19">Science</div>
+          </div>
+          <div class="div-gb-grid-column-4">
+            <div class="frame-4">
+              <img class="vector-7" src="img/vector-10.png" />
+              <div class="ellipse-5"></div>
+            </div>
+            <div class="text-wrapper-19">Art &amp; Design</div>
+          </div>
+          <div class="div-gb-grid-column-4">
+            <div class="frame-4">
+              <img class="vector-9" src="img/vector-9.png" />
+              <div class="ellipse-5"></div>
+            </div>
+            <div class="text-wrapper-19">Design &amp; technology</div>
+          </div>
+          <div class="div-gb-grid-column-4">
+            <div class="frame-4">
+              <img class="vector-10" src="img/vector-8.png" />
+              <div class="ellipse-5"></div>
+            </div>
+            <div class="text-wrapper-19">Modern languages</div>
+          </div>
+          <img class="user-interface" src="img/user-interface-chevron-right-1.png" />
+          <div class="frame-16">
+            <div class="div-gb-grid-column-5">
+              <div class="frame-4">
+                <img class="vector-9" src="img/vector-7.png" />
+                <div class="ellipse-5"></div>
+              </div>
+              <div class="text-wrapper-20">PSHE</div>
+            </div>
+            <div class="div-gb-grid-column-5">
+              <div class="frame-4">
+                <img class="vector-11" src="img/vector-6.png" />
+                <div class="ellipse-5"></div>
+              </div>
+              <div class="text-wrapper-20">Geography</div>
+            </div>
+            <div class="div-gb-grid-column-5">
+              <div class="frame-4">
+                <img class="vector-12" src="img/vector-5.png" />
+                <div class="ellipse-5"></div>
+              </div>
+              <div class="text-wrapper-20">History</div>
+            </div>
+            <div class="div-gb-grid-column-5">
+              <div class="frame-4">
+                <img class="vector-13" src="img/vector-4.png" />
+                <div class="ellipse-5"></div>
+              </div>
+              <div class="text-wrapper-20">Physical education</div>
+            </div>
+            <div class="div-gb-grid-column-5">
+              <div class="frame-4">
+                <img class="vector-14" src="img/vector-3.png" />
+                <div class="ellipse-5"></div>
+              </div>
+              <div class="text-wrapper-20">Computing</div>
+            </div>
+            <div class="div-gb-grid-column-5">
+              <div class="frame-4">
+                <img class="vector-15" src="img/vector-2.png" />
+                <div class="ellipse-5"></div>
+              </div>
+              <div class="text-wrapper-20">Music</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-gb-inside-4">
+        <p class="heading-who-can-2">Is your child going to PRIMARY?</p>
+        <div class="frame-17">
+          <div class="div-elementor-2">
+            <img class="element-jpg" src="img/1-5-jpg-1.png" />
+            <img class="pseudo-2" src="img/pseudo.png" />
+            <div class="frame-18">
+              <div class="text-wrapper-21">Early Years</div>
+              <p class="text-wrapper-22">Children ages 3 to 5</p>
+            </div>
+          </div>
+          <div class="div-elementor-2">
+            <img class="element-jpg" src="img/1-5-jpg.png" />
+            <img class="pseudo-2" src="img/pseudo.png" />
+            <div class="frame-19">
+              <p class="text-wrapper-21">Key Stages 1 &amp; 2</p>
+              <p class="text-wrapper-22">Children ages 3 to 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame-20">
+        <div class="div-contact-section">
+          <div class="heading-who-can-2">Explore our campuses!</div>
+          <div class="div-gb-grid-column-wrapper">
+            <div class="frame-wrapper">
+              <div class="frame-21">
+                <div class="frame-22">
+                  <img class="screenshot" src="img/screenshot-2023-09-09-165037-1.png" />
+                  <div class="strong-primary-wrapper">
+                    <p class="strong-primary">
+                      <span class="span">Primary School<br /></span>
+                      <span class="text-wrapper-23">49 Rue du Parc, Tunis 2036<br />70 240 880</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="frame-23">
+                  <img class="screenshot" src="img/screenshot-2023-09-09-170856-1.png" />
+                  <div class="frame-24">
+                    <p class="strong-primary-2">
+                      <span class="span">Secondary School<br /></span>
+                      <span class="text-wrapper-23">42 rue Socrates, 2015 Kram<br />70 240 880</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div-site-footer">
+          <div class="div-footer-widgets">
+            <img class="cropped-BIST-NEW" src="img/cropped-bist-new-logo-white-1.png" />
+            <div class="frame-25">
+              <img class="vector-16" src="img/vector-1.png" />
+              <div class="text-wrapper-24">admissions@bistunis.com</div>
+            </div>
+            <div class="frame-25">
+              <img class="vector-17" src="img/vector.png" />
+              <div class="text-wrapper-24">+216 70 240 880</div>
+            </div>
+            <img class="link-margin" src="img/link-margin.png" />
+          </div>
+          <div class="div-copyright-bar-wrapper">
+            <div class="div-copyright-bar">
+              <p class="british">
+                <span class="text-wrapper-25">© British International School of Tunis 2023 - </span>
+                <span class="text-wrapper-26">Legal notice</span>
+              </p>
+            </div>
+          </div>
+          <img class="logo-png" src="img/logo-png-4.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

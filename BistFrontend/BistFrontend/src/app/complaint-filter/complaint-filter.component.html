@@ -1,0 +1,11 @@
+<div>
+  
+    <label>Status:</label>
+    <select [(ngModel)]="selectedStatus">
+      <option value="sent">Sent</option>
+      <option value="resolved">Resolved</option>
+      <option value="pending">Pending</option>
+    </select>
+    <button (click)="applyFilter()">Apply Filter</button>
+  </div>
+  

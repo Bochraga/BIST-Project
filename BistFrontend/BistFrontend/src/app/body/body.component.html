@@ -1,0 +1,145 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-brand" routerLink="/">BIST</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/eventlistall" routerLinkActive="active">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/AddAdmission" routerLinkActive="active">AddAdmission</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/admissionlist" routerLinkActive="active">ListAdmission</a>
+            </li>
+
+            <li class="nav-item dropdown" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+                <a class="nav-link" (click)="toggleDropdown()">Complaint</a>
+                <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+                    <li class="dropdown-item">
+                        <a class="nav-link" routerLink="/complaint">Post Complaint</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="nav-link" routerLink="/Listcomplaint">My Complaint List</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <!-- Use routerLink to navigate to the appropriate dashboard based on user role -->
+            <button class="login-button" (click)="openLoginModal()" *ngIf="!connectedUserName">Login</button>
+            <button class="logout-button" *ngIf="connectedUserName" (click)="logout()">Logout</button>
+            <button class="register-button" (click)="openRegisterOptionsModal()"
+                *ngIf="!connectedUserName">Register</button>
+            <div class="connected-user" *ngIf="connectedUserName">
+                <div class="circle"></div>
+                <span>{{ connectedUserName }}</span>
+                <!--  <a *ngIf="isAdmin" routerLink="/complaint">Admin Dashboard</a>-->
+                <!-- <a *ngIf="!isAdmin" routerLink="/eventlistall">User Dashboard</a>-->
+
+            </div>
+
+        </div>
+        <!--*ngIf="!connectedUserName && isTokenExpired()"-->
+        <!--*ngIf="!connectedUserName && isTokenExpired()"-->
+
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+    <router-outlet name="eventList"></router-outlet>
+
+</div>
+
+<!-- Login Modal -->
+<div class="modal" [ngClass]="{'show': isLoginModalOpen}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" (click)="closeLoginModal()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <button class="forgot-password-button" (click)="openPasswordResetModal()">Forgot Password</button>
+
+            <div class="modal-body">
+                <app-login (loginSuccesss)="handleLoginSuccess($event)"></app-login>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" [ngClass]="{'show': isRegisterOptionsModalOpen}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register Options</h5>
+                <button type="button" class="close" (click)="closeRegisterOptionsModal()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Please select a registration option:</p>
+                <button class="register-option-button" (click)="openRegisterSimpleModal()">Register Simple</button>
+                <button class="register-option-button" (click)="openRegisterAdminModal()">Register for Admin</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" [ngClass]="{'show': isRegisterSimpleModalOpen}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register ( simple ) </h5>
+                <button type="button" class="close" (click)="closeRegisterSimpleModal()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-register-simple (registrationSuccess)="handleRegistrationSuccess($event)"></app-register-simple>
+                <button class="back-button" (click)="backToRegisterOptions()">Back</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="bull-icon" class="bull-icon" (click)="toggleChatInterface()">
+    🤖 
+</div>
+
+<div *ngIf="isChatOpen" id="chat-container" class="chat-container">
+    <div id="chat-history" class="chat-history" [style.display]="showChatHistory ? 'block' : 'none'">
+        <div *ngFor="let message of chatMessages" class="message">{{ message }}</div>
+        <div class="chat-history-scroll-overlay" (click)="sendMessage()"></div>
+    </div>
+    <div>
+        <input type="text" id="user-input" class="user-input" placeholder="Type a message...">
+        <button id="send-button" class="send-button" (click)="sendMessage()">Send</button>
+    </div>
+</div>
+
+
+<div class="modal" [ngClass]="{'show': isRegisterAdminModalOpen}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register for Admin</h5>
+                <button type="button" class="close" (click)="closeRegisterAdminModal()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-register></app-register>
+                <button class="back-button" (click)="backToRegisterOptions()">Back</button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Add Grade</h2>
+    <form [formGroup]="gradeForm" (ngSubmit)="onSubmit()" class="form" >
+      <div class="form-group">
+        <label for="classe">Class:</label>
+        <select formControlName="classe_id" id="classe_id" class="form-control" required (change)="onClassChange($event)">
+          <option value="" disabled selected>Select Class</option>
+          <option *ngFor="let classItem of classes$ | async" [value]="classItem.id">
+            {{ classItem.level }}
+          </option>
+        </select>
+      </div>
+
+      <label for="student_id">Student:</label>
+      <select formControlName="student_id" id="student_id" class="form-control" required>
+        <option value="" disabled selected>Select Student</option>
+        <option *ngFor="let student of students" [value]="student.id">
+          {{ student.id }} - {{ student.FullName }}
+        </option>
+      </select>
+      
+
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <select formControlName="subject_id" id="subject_id" class="form-control" required>
+          <option value="" disabled selected>Select subject</option>
+          <option *ngFor="let subjectItem of subjects$ | async" [value]="subjectItem.id">
+            {{ subjectItem.name }}
+          </option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="grade">Grade:</label>
+        <input type="text" formControlName="grade" id="grade" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester:</label>
+        <select formControlName="semester" id="semester" class="form-control" required>
+          <option value="" disabled selected>Select Semester</option>
+          <option value="1">Semester 1</option>
+          <option value="2">Semester 2</option>
+          <option value="3">Semester 3</option>
+
+        </select>
+      </div>
+     
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Grade</button>
+      </div>
+    </form>
+  </div>
+  
+  

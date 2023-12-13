@@ -1,0 +1,50 @@
+<h2>Login</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+  </div>
+
+  <div *ngIf="loginError" class="error-message">Invalid username or password</div>
+
+  <div *ngIf="loginSuccess" class="success-message">Login successful</div>
+
+  <button type="submit">Login</button>
+
+
+  <nav>
+    <ul>
+      <!-- Show this route for sub-admin -->
+      <li *ngIf="isSubAdmin">
+        <a routerLink="/login/admissionlist">Admission List</a>
+      </li>
+
+      <!-- Show these routes for ROLE_USER -->
+      <li *ngIf="isUser">
+        <a routerLink="/editprofile">Edit profile</a>
+      </li>
+      <li *ngIf="isUser">
+        <a routerLink="/Listcomplaint">complaint</a>
+      </li>
+      <li *ngIf="isUser">
+        <a routerLink="/login/uploadfile">Add Files</a>
+      </li>
+
+      <!-- Show these routes for ROLE_ADMIN -->
+      <li *ngIf="isAdmin">
+        <a routerLink="/eventlistAdmin">Event ADMIN</a>
+      </li>
+      <li *ngIf="isAdmin">
+        <a routerLink="/login/eventadmin">Create Event</a>
+      </li>
+    </ul>
+  </nav> 
+
+ 
+</form>

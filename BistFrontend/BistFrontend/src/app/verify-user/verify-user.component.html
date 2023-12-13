@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>
+          <button (click)="verifyUser(user.id)">Verify</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

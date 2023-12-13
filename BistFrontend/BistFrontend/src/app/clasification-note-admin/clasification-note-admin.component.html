@@ -1,0 +1,32 @@
+<div class="container">
+  <label for="class">Class:</label>
+  <select [(ngModel)]="selectedClass" (change)="searchNotes()">
+    <option *ngFor="let classItem of classes$ | async" [ngValue]="classItem">{{ classItem.Level }}</option>
+  </select>
+
+  <label for="semester">Semester:</label>
+  <select [(ngModel)]="semestre" (change)="searchNotes()">
+    <option value="1">Semester 1</option>
+    <option value="2">Semester 2</option>
+    <option value="3">Semester 3</option>
+  </select>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name </th>
+        <th>Subject</th>
+        <th>Grade</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let note of classificationNotes">
+        <td>{{note.student_name}}</td>
+        <td>{{ note.subject }}</td>
+        <td>{{ note.grade }}</td>
+        <td>{{ note.semester }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

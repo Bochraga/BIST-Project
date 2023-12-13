@@ -1,0 +1,92 @@
+<div class="container">
+    <h1>List of Admins</h1>
+  
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search by term">
+      <button (click)="search()">Search</button>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Birthdate</th>
+            <th>Phone</th>
+            <th>Occupation</th>
+            <th>Address</th>
+            <th>Username</th>
+            <th>Nationality </th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let admin of admins">
+            <td>{{ admin.email}}</td>
+            <td>{{ admin.password }}</td>
+            <td>{{ admin.firstName }}</td>
+            <td>{{ admin.lastName }}</td>
+            <td>{{ admin.birthdate }}</td>
+            <td>{{ admin.phone }}</td>
+            <td>{{ admin.occupation}}</td>
+            <td>{{ admin.address}}</td>
+            <td>{{ admin.username}}</td>
+            <td>{{ admin.nationality }}</td>
+            <td>
+          <td>
+            <button (click)="deleteAdmin(admin.id)">Delete</button>
+            <button (click)="selectAdmins(admin)">Edit</button>
+
+          </td>
+          <button (click)="changeAdminStatus(admin.id)">Change Status</button>
+
+        </tr>
+      </tbody>
+    </table>
+<form *ngIf="selectedAdmins" [formGroup]="modifyForm" (submit)="editAdmin()">
+<div>
+<label for="email">Email:</label>
+<input type="text" id="email" formControlName="email">
+</div>
+<div>
+<label for="password">Password:</label>
+<input type="password" id="password" formControlName="password">
+</div>
+<div>
+<label for="firstName">First Name:</label>
+<input type="text" id="firstName" formControlName="firstName">
+</div>
+<div>
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" formControlName="lastName">      
+</div>
+<div>
+<label for="birthdate">Birthdate:</label>
+<input type="date" id="birthdate" formControlName="birthdate">
+</div>
+<div>
+<label for="phone">Phone:</label>
+<input type="tel" id="phone" formControlName="phone">
+</div>
+<div>
+<label for="occupation">Occupation:</label>
+<input type="text" id="occupation" formControlName="occupation">
+</div>
+<div>
+<label for="address">Address:</label>
+<textarea id="address" formControlName="address"></textarea>
+</div>
+<div>
+<label for="username">Username:</label>
+<input type="text" id="username" formControlName="username">
+</div>
+<div>
+<label for="nationality">Nationality:</label>
+<input type="text" id="nationality" formControlName="nationality">
+</div>
+<button type="submit">Save</button>
+</form>
+</div>
+  

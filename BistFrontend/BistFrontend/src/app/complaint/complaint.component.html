@@ -1,0 +1,17 @@
+<div class="complaint-form">
+    <h2 class="form-title">Submit Complaint</h2>
+    <form class="form" (ngSubmit)="submitComplaint()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" id="title" name="title" [(ngModel)]="complaintData.title" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="content" [(ngModel)]="complaintData.content" required></textarea>
+      </div>
+  
+      <button class="btn-submit" type="submit">Submit</button>
+    </form>
+  </div>
+  

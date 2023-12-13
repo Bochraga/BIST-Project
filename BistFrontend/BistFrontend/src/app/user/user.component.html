@@ -1,0 +1,14 @@
+<form (submit)="onSubmit()" enctype="multipart/form-data" [ngClass]="{'upload-form': true}">
+    <div class="form-group">
+      <label for="fileInput">Select a File:</label>
+      <input type="file" (change)="onFileSelected($event)" name="document" id="fileInput">
+    </div>
+    <div class="form-group">
+      <label for="nameInput">Name:</label>
+      <input type="text" [(ngModel)]="name" name="name" id="nameInput">
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+  

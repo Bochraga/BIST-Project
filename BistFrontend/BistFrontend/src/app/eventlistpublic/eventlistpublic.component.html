@@ -1,0 +1,22 @@
+<table class="event-list-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Hour</th>
+      <th>Place</th>
+      <th>Participants</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events" class="event-row">
+      <td>{{ event.title }}</td>
+      <td>{{ event.description }}</td>
+      <td>{{ event.date }}</td>
+      <td>{{ event.hour }}</td>
+      <td>{{ event.place }}</td>
+      <td>{{ event.nbParticipant }}</td>
+    </tr>
+  </tbody>
+</table>
